@@ -4,7 +4,7 @@ def delete(path):
     count = 0
     for filename in os.listdir(path):
         for filenameDup in os.listdir(path):
-            if filename.endswith('.MOV') and filename.split('.')[0] == filenameDup.split('.')[0]:
+            if filename.endswith('.MOV') and not filenameDup.endswith(".MOV") and filename.split('.')[0] == filenameDup.split('.')[0]:
                 location = os.path.join(path, filename)
                 if os.path.exists(location):
                     print(filename)
